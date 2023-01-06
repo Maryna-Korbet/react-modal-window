@@ -22,9 +22,15 @@ export default class Modal extends Component {
         }
     }
 
+    hendleBackdropClick = e => {
+        if (e.currentTarget === e.target) {
+            this.props.onClose();
+        }
+    }
+
     render() {
         return createPortal(
-            <div className={css.backdrop}>
+            <div className={css.backdrop} onClick={this.hendleBackdropClick}>
                 <div className={css.content}>{this.props.children}</div>
             </div>,
             modalRoot,
