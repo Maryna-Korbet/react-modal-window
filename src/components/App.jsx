@@ -28,7 +28,7 @@ export class App extends Component {
       >
         <button type="button" onClick={this.toggleModal}>Open Modal</button>
         {showModal && (
-          <Modal>
+          <Modal onClose={this.toggleModal}>
             <h1>Hello World</h1>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis placeat iusto debitis facere porro in dolores, quasi quibusdam nemo at iure. Explicabo quo itaque non quaerat magni accusantium nulla deleniti?

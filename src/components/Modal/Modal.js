@@ -8,10 +8,18 @@ export default class Modal extends Component {
 
     componentDidMount() {
         console.log('Modal componentDidMount');
+        window.addEventListener('keydown', this.hendleKeyDown);
     }
 
     componentWillUnmount() {
         console.log('Nodal componentWillUnmount');
+        window.removeEventListener('keydown', this.hendleKeyDown);
+    }
+
+    hendleKeyDown = e => {
+        if (e.code === 'Escape') {
+            this.props.onClose();
+        }
     }
 
     render() {
